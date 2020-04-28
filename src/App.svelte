@@ -10,17 +10,18 @@
   import { Router, Route, Link } from "svelte-routing";
   // components
   import Navbar from "./components/Navbar/Navbar.svelte";
+  import Sidebar from "./components/Navbar/Sidebar.svelte";
+  // global store
+  import globalStore from "./stores/globalStore";
 </script>
 
 <Router>
   <Navbar />
-  <!-- <nav class="navbar">
-    <Link to="/">Accueil</Link>
-    <Link to="/about">A propros</Link>
-    <Link to="/products">Produits</Link>
-  </nav> -->
+  {#if $globalStore.sidebar}
+    <Sidebar />
+  {/if}
   <Route path="/" component={Home} />
-  <Route path="/about" component="{About}" />
+  <Route path="/about" component={About} />
   <Route path="/login" component={Login} />
   <Route path="/products" component={Products} />
   <Route path="/products/:id" component={ProductTemplate} />
