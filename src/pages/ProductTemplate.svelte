@@ -16,7 +16,7 @@
   <Loading />
 {:else}
   <section class="single-product">
-    <!-- boutton retour -->
+    <!-- bouton retour -->
     <a href="/products" use:link class="btn-primary">Retour</a>
     <div class="single-product-container">
       <article class="single-product-image">
