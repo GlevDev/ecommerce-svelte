@@ -1,6 +1,7 @@
 <script>
   export let id;
   export let location;
+  import {addToCart} from '../stores/cart';
   import globalStore from '../stores/globalStore';
   import products from '../stores/defaultProducts';
   import Loading from '../components/Loading.svelte';
@@ -26,7 +27,11 @@
         <h1>{product.title}</h1>
         <h2>{product.price}€</h2>
         <p>{product.description}</p>
-        <button class="btn-primary btn-block" on:click="{() => {globalStore.toggleItem('cart', true)}}">ajouter au panier</button>
+        <button class="btn-primary btn-block" on:click="{() => {
+          addToCart(product);
+          globalStore.toggleItem('cart', true)
+          }}"
+        >ajouter au panier</button>
       </article>
     </div>
   </section>

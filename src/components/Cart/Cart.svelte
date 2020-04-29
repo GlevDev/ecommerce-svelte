@@ -2,7 +2,7 @@
   import globalStore from '../../stores/globalStore';
   import { fly, fade, blur } from 'svelte/transition';
   import { link } from 'svelte-routing';
-  // itemList
+  import ItemsList from "./ItemsList.svelte";
   let user = false;
 </script>
 
@@ -14,12 +14,12 @@
         <button class="btn-close" on:click={() => {globalStore.toggleItem('cart', false)}}>
           <i class="fas fa-window-close" />
         </button>
-        <h2 class="cart-title">your bag</h2>
+        <h2 class="cart-title">Votre panier</h2>
         <span />
       </div>
       <!-- fin entête -->
       <!-- début produits -->
-      <p>cart items</p>
+      <ItemsList />
       <!-- fin produits -->
       <!-- début footer -->
       <div class="cart-footer">
