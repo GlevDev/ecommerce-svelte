@@ -3,7 +3,7 @@
   import { fly, fade, blur } from 'svelte/transition';
   import { link } from 'svelte-routing';
   import ItemsList from "./ItemsList.svelte";
-  let user = false;
+  import user from "../../stores/user.js";
 </script>
 
 <div class="cart-overlay" transiton:blur>
@@ -23,7 +23,7 @@
       <!-- fin produits -->
       <!-- début footer -->
       <div class="cart-footer">
-        {#if user}
+        {#if $user.jwt}
           <a href="/checkout" use:link class="btn-primary btn-block" on:click={() => {globalStore.toggleItem('cart', false)}}>commander</a>
         {:else}
           <p class="cart-login">
