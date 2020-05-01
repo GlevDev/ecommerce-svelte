@@ -6,7 +6,7 @@
   import user from "../../stores/user.js";
 </script>
 
-<div class="cart-overlay" transiton:blur>
+<div class="cart-overlay" transiton:blur={{opacity: 0}}>
   <div class="cart-container" transition:fly={{x: 1000}}>
     <div class="cart" transition:fade={{delay: 400}}>
       <!-- début entête -->
